@@ -13,7 +13,7 @@ public class BaseballNumberGenerator implements IRandomNumberGenerator {
     public List<Integer> generateUniqueNumbers() {
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < REQUIRED_SIZE) {
-            int number = random.nextInt(10); // 0~9
+            int number = random.nextInt(9) + 1; // (1 ~ 9)
             if (!numbers.contains(number)) {
                 numbers.add(number);
             }
