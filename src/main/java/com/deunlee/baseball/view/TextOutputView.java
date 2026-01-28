@@ -1,5 +1,7 @@
 package com.deunlee.baseball.view;
 
+import com.deunlee.baseball.model.ComparisonResult;
+
 public class TextOutputView {
 
     public void printStartMessage() {
@@ -18,5 +20,19 @@ public class TextOutputView {
         System.out.println("[ERROR] " + message);
     }
 
-
+    public void printResult(final ComparisonResult result) {
+        if (result.isNothing()) {
+            System.out.println("낫싱");
+            return;
+        }
+        if (result.hasOnlyBalls()) {
+            System.out.println(result.getBalls() + "볼");
+            return;
+        }
+        if (result.hasOnlyStrikes()) {
+            System.out.println(result.getStrikes() + "스트라이크");
+            return;
+        }
+        System.out.println(result.getBalls() + "볼 " + result.getStrikes() + "스트라이크");
+    }
 }
