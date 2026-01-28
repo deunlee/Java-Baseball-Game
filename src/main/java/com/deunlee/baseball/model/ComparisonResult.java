@@ -12,19 +12,10 @@ public class ComparisonResult {
         this.balls   = balls;
     }
 
-    public int getStrikes() {
-        return strikes;
-    }
-
-    public int getBalls() {
-        return balls;
-    }
-
-    public boolean isWin() {
-        return strikes == WIN_STRIKES;
-    }
-
-    public boolean isNothing() {
-        return strikes == NOTHING && balls == NOTHING;
-    }
+    public int     getStrikes()     { return strikes;      }
+    public int     getBalls()       { return balls;        }
+    public boolean isWin()          { return strikes == 3; }
+    public boolean isNothing()      { return strikes == 0 && balls  == 0; }
+    public boolean hasOnlyBalls()   { return strikes == 0 && balls   > 0; }
+    public boolean hasOnlyStrikes() { return balls   == 0 && strikes > 0; }
 }
