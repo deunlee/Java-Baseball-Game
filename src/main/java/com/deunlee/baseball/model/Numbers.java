@@ -45,4 +45,8 @@ public class Numbers {
     public boolean contains(int digit) {
         return digits.contains(digit);
     }
+
+    public int size() {
+        return digits.size();
+    }
 }
